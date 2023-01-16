@@ -76,14 +76,18 @@ const Home: NextPage = () => {
       <Header></Header>
       <Marquee className="bg-[#0A1F1C] p-5 mb-5" gradient={false} speed={100}>
         <div className="flex space-x-2 mx-10">
-          <h4 className="text-white font-bold">Last Winner: {lastWinner?.toString()}{"    "}</h4>
-          <h4 className="text-white font-bold">Previous Winner: {" "}{lastWinnerAmount && ethers.utils.formatEther(lastWinnerAmount?.toString())}{" "}{currency}</h4>
+          <h4 className="text-white font-bold">Last Winner: {lastWinner?.toString()}{" "}</h4>
+          <h4 className="text-white font-bold"> / Prize: {" "}{lastWinnerAmount && ethers.utils.formatEther(lastWinnerAmount?.toString())}{" "}{currency}</h4>
         </div>
       </Marquee>
-      {isLotteryOperator===address && (<div className="flex justify-center">
+      {/* {isLotteryOperator===address && (<div className="flex justify-center">
         <AdminControls/>
         
-      </div>)}
+      </div>)} */}
+      <div className="flex justify-center">
+        <AdminControls/>
+        
+      </div>
 
     
         {winnings>0 && (
